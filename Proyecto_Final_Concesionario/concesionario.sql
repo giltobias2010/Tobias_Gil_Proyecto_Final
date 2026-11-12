@@ -60,16 +60,10 @@ INSERT INTO usuarios (nombre, apellido, dni, correo, contrasena, rol) VALUES
  '$2y$12$ctgtI2z4bvcfpwDk/KU9ouP4jRwRh2z6K3cP0PYkjsgVhga0Flcg2', 'admin');
 
 -- Autos de ejemplo (dos con foto, el resto sin foto)
-INSERT INTO autos (marca, modelo, anio, precio, patente, estado, color, kilometraje, combustible, transmision, descripcion, imagen) VALUES
-('Ford', 'Ranger Wildtrak', 2023, 52000000.00, 'AF123RN', 'disponible', 'Naranja', 12000, 'Diésel', 'Automática',
- 'Pick-up doble cabina 4x4 con motor turbodiésel, pantalla multimedia y asistentes de manejo.', 'uploads/autos/ranger.jpg'),
-('Ford', 'F-150 Raptor', 2022, 98000000.00, 'AE456RP', 'disponible', 'Rojo', 18500, 'Nafta', 'Automática',
- 'Pick-up de alto rendimiento con suspensión off-road, motor V6 biturbo y tracción 4x4.', 'uploads/autos/raptor.jpg'),
-('Toyota', 'Corolla', 2022, 28500000.00, 'AB123CD', 'disponible', 'Blanco', 32000, 'Nafta', 'Automática',
- 'Sedán confortable y económico, ideal para uso diario y viajes largos.', NULL),
-('Volkswagen', 'Gol Trend', 2019, 14200000.00, 'AA456BC', 'disponible', 'Gris', 68000, 'Nafta', 'Manual',
- 'Compacto práctico, bajo consumo y repuestos accesibles.', NULL),
-('Ford', 'Ranger', 2021, 41000000.00, 'AC789DE', 'reservado', 'Negro', 45000, 'Diésel', 'Manual',
- 'Pick-up doble cabina, motor 2.2 turbodiésel, muy buen estado general.', NULL),
-('Chevrolet', 'Cruze', 2020, 24500000.00, 'AD321EF', 'disponible', 'Negro', 52000, 'Nafta', 'Automática',
- 'Sedán amplio con buen equipamiento de seguridad y conectividad.', NULL);
+INSERT INTO `autos` (`id`, `marca`, `modelo`, `anio`, `precio`, `patente`, `estado`, `color`, `kilometraje`, `combustible`, `transmision`, `descripcion`, `imagen`, `creado_en`, `fecha_archivado`) VALUES
+(1, 'Ford', 'Ranger Wildtrak', 2023, 52000000.00, 'AF123RN', 'disponible', 'Naranja', 12000, 'Diésel', 'Automática', 'Pick-up doble cabina 4x4 con motor turbodiésel, pantalla multimedia y asistentes de manejo.', 'uploads/autos/ranger.jpg', '2026-11-12 15:17:03', NULL),
+(2, 'Ford', 'F-150 Raptor', 2022, 98000000.00, 'AE456RP', 'disponible', 'Rojo', 18500, 'Nafta', 'Automática', 'Pick-up de alto rendimiento con suspensión off-road, motor V6 biturbo y tracción 4x4.', 'uploads/autos/raptor.jpg', '2026-11-12 15:17:03', NULL),
+(3, 'Toyota', 'Corolla', 2022, 28500000.00, 'AB123CD', 'disponible', 'Blanco', 32000, 'Nafta', 'Automática', 'Sedán confortable y económico, ideal para uso diario y viajes largos.', 'uploads/autos/94d40c81f55aecc109e6987dc4cf2311.jpg', '2026-11-12 15:17:03', NULL),
+(4, 'Volkswagen', 'Gol Trend', 2019, 14200000.00, 'AA456BC', 'disponible', 'Gris', 68000, 'Nafta', 'Manual', 'Compacto práctico, bajo consumo y repuestos accesibles.', 'uploads/autos/d0747f9d1c9b3515f66ab24c88b7658b.jpg', '2026-11-12 15:17:03', NULL),
+(5, 'Ford', 'Ranger', 2021, 41000000.00, 'AC789DE', 'reservado', 'Negro', 45000, 'Diésel', 'Manual', 'Pick-up doble cabina, motor 2.2 turbodiésel, muy buen estado general.', 'uploads/autos/adb228837448d574deaec6ef8a9bc193.jpg', '2026-11-12 15:17:03', NULL),
+(6, 'Chevrolet', 'Cruze', 2020, 24500000.00, 'AD321EF', 'disponible', 'Negro', 52000, 'Nafta', 'Automática', 'Sedán amplio con buen equipamiento de seguridad y conectividad.', 'uploads/autos/48754e191d4e54454d0466d2a32101dc.jpg', '2026-11-12 15:17:03', NULL);
