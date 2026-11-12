@@ -1,0 +1,176 @@
+/* ==========================================================================
+   Estilos del Concesionario · Paleta: blanco, negro y rojo mate
+   Orden: 1 Variables · 2 Base · 3 Barra · 4 Estructura · 5 Formularios y botones
+          6 Avisos · 7 Tablas · 8 Catálogo y tarjetas · 9 Pie · 10 Móvil
+   ========================================================================== */
+
+/* 1. Variables ------------------------------------------------------------ */
+:root {
+  --negro: #111111;
+  --negro-suave: #1e1e1e;
+  --rojo: #a61e22;          /* rojo mate */
+  --rojo-oscuro: #7e171a;
+  --blanco: #ffffff;
+  --gris-fondo: #f3f3f3;
+  --gris-borde: #d9d9d9;
+  --gris-texto: #555555;
+}
+
+/* 2. Base ----------------------------------------------------------------- */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--gris-fondo);
+  color: var(--negro);
+  line-height: 1.5;
+}
+a { color: var(--rojo); }
+a:hover { color: var(--rojo-oscuro); }
+h1, h2 { color: var(--negro); margin-top: 0; }
+h2 { margin-top: 28px; padding-bottom: 6px; border-bottom: 2px solid var(--rojo); }
+h3 { color: var(--negro); margin: 8px 0 4px; }
+img { max-width: 100%; }
+
+/* 3. Barra superior ------------------------------------------------------- */
+.barra {
+  background-color: var(--negro);
+  border-bottom: 4px solid var(--rojo);
+  color: var(--blanco);
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.barra .marca { color: var(--blanco); font-weight: bold; font-size: 18px; text-decoration: none; }
+.barra .marca span { color: var(--rojo); }
+.barra nav { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; }
+.barra nav a { color: var(--blanco); text-decoration: none; }
+.barra nav a:hover { color: #e06a6d; }
+.barra .boton-link { color: var(--blanco); text-decoration: none; }
+.barra .boton-link:hover { color: #e06a6d; }
+
+/* 4. Estructura ----------------------------------------------------------- */
+.contenedor {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px 20px;
+  background-color: var(--blanco);
+  min-height: 70vh;
+}
+.acciones { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.tarjeta {
+  background-color: var(--gris-fondo);
+  border-left: 5px solid var(--rojo);
+  padding: 5px 16px;
+  margin-bottom: 20px;
+}
+.tarjeta h2 { border: none; margin-top: 12px; }
+
+/* 5. Formularios y botones ------------------------------------------------ */
+.formulario { max-width: 440px; }
+.formulario label { display: block; margin-bottom: 12px; font-weight: bold; }
+.formulario input,
+.formulario select,
+.formulario textarea {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid var(--gris-borde);
+  font: inherit;
+  font-weight: normal;
+  background-color: var(--blanco);
+}
+.formulario input:focus,
+.formulario select:focus,
+.formulario textarea:focus,
+.busqueda input:focus { outline: 2px solid var(--rojo); border-color: var(--rojo); }
+
+button, .boton {
+  background-color: var(--rojo);
+  color: var(--blanco);
+  border: none;
+  padding: 9px 16px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+button:hover, .boton:hover { background-color: var(--rojo-oscuro); color: var(--blanco); }
+
+.boton-link { background: none; color: var(--rojo); padding: 0; text-decoration: underline; }
+.boton-link:hover { background: none; color: var(--rojo-oscuro); }
+.peligro { color: var(--negro); }
+.en-linea { display: inline; margin: 0; }
+
+.busqueda { margin: 15px 0; display: flex; gap: 8px; flex-wrap: wrap; }
+.busqueda input[type="search"] {
+  padding: 8px;
+  width: 280px;
+  max-width: 100%;
+  border: 1px solid var(--gris-borde);
+}
+
+/* 6. Avisos --------------------------------------------------------------- */
+.aviso { padding: 10px 14px; margin: 10px 0; background-color: var(--gris-fondo); }
+.aviso-ok { border-left: 4px solid var(--negro); }
+.aviso-error { border-left: 4px solid var(--rojo); color: var(--rojo-oscuro); font-weight: bold; }
+
+/* 7. Tablas --------------------------------------------------------------- */
+.tabla-scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; margin: 15px 0; }
+th, td { border: 1px solid var(--gris-borde); padding: 8px; text-align: left; vertical-align: middle; }
+th { background-color: var(--negro); color: var(--blanco); }
+tbody tr:nth-child(even) { background-color: var(--gris-fondo); }
+.miniatura { width: 70px; height: 50px; object-fit: cover; }
+
+/* Etiquetas de estado */
+.estado {
+  display: inline-block;
+  padding: 2px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+.estado-disponible { background-color: var(--rojo); color: var(--blanco); }
+.estado-reservado  { background-color: var(--gris-borde); color: var(--negro); }
+.estado-vendido    { background-color: var(--negro); color: var(--blanco); }
+
+/* 8. Catálogo y tarjetas de autos ----------------------------------------- */
+.catalogo {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 20px;
+}
+.auto { border: 1px solid var(--gris-borde); background-color: var(--blanco); display: flex; flex-direction: column; }
+.auto:hover { border-color: var(--rojo); }
+.auto img, .sin-foto { width: 100%; height: 180px; object-fit: cover; display: block; }
+.sin-foto {
+  background-color: var(--negro-suave);
+  color: var(--gris-borde);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.auto-info { padding: 12px 14px 16px; }
+.datos-auto { color: var(--gris-texto); font-size: 14px; margin: 4px 0; }
+.precio { font-weight: bold; color: var(--rojo); font-size: 20px; margin: 8px 0; }
+
+/* 9. Pie ----------------------------------------------------------------- */
+.pie {
+  text-align: center;
+  background-color: var(--negro);
+  border-top: 4px solid var(--rojo);
+  color: var(--gris-borde);
+  padding: 15px;
+  font-size: 14px;
+}
+
+/* 10. Pantallas chicas ---------------------------------------------------- */
+@media (max-width: 700px) {
+  .barra { flex-direction: column; align-items: flex-start; }
+}
