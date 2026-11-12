@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
     // Mismo mensaje siempre: no revela si el correo existe
-    $error = 'Correo o contraseña incorrectos.';
+        $error = 'Correo o contraseña incorrectos o tu cuenta esta archivada.';
 }
 
 $titulo = 'Ingresar';
